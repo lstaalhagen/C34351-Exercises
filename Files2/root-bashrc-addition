@@ -1,0 +1,18 @@
+# TAG:MQTTCOAPEXERCISE
+
+# Hack to make namespace name part of prompt if not default namespace
+if [ -n "$(ip netns identify)" ]; then
+  export PS1="$(ip netns identify)@\h:\w\$ "
+fi
+
+# Fix to set the LD_LIBRARY_PATH, so that the coap-server
+# and coap-client programs can be run inside Xterm windows
+# on namespaces. Maybe the env should be set globally from /etc/... ??
+if [ -z "$LD_LIBRARY_PATH" ]; then
+  export LD_LIBRARY_PATH=/usr/local/lib
+else
+  echo $LD_LIBRARY_PATH | grep -q -E "(^|:)/usr/local/lib(:|$)"
+  if [ $? -ne 0 ]; then
+    export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/lib
+  fi
+fi

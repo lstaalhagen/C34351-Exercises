@@ -1,0 +1,10 @@
+avahi-daemon.service
+avahi-daemon.socket
+cups.service
+cups-browsed.service
+ModemManager.service
+ufw.service
+unattended-upgrades.service
+apt-daily-upgrade.service
+apt-daily-upgrade.timer
+apt-daily.timer
