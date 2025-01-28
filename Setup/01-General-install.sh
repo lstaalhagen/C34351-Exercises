@@ -10,7 +10,7 @@ apt-get -y upgrade
 apt-get -y autoremove
 
 # Miscellaneous other packages
-apt-get -y install build-essential wireshark conntrack conntrackd xterm curl net-tools ssh gcc-12 bridge-utils jq nmap 
+apt-get -y install build-essential wireshark conntrack conntrackd xterm curl net-tools ssh gcc-12 bridge-utils jq nmap openvswitch-common openvswitch-switch
 
 # Cleanup apt-get
 apt-get clean
