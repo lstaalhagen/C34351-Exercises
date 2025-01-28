@@ -3,9 +3,6 @@
 # Check for root
 [ $(id -u) -ne 0 ] && echo "Script must be executed with sudo" && exit
 
-# Install Open vSwitch packages
-apt-get install -y openvswitch-common openvswitch-switch
-
 # Hack for libssl3 version confusion (NEEDS FIXING FOR FUTURE INSTALLS)
 apt-get install -y --allow-downgrades libssl3=3.0.2-0ubuntu1.12
 
